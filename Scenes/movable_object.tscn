@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmtmuvgvjf5cx"]
+
+[ext_resource type="Script" uid="uid://ccdetichpqw1r" path="res://MainMenu/Scenes/obstacle.gd" id="1_7fij8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqcge"]
+albedo_color = Color(0.85849756, 0.20461786, 0.2820523, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gb2vs"]
+material = SubResource("StandardMaterial3D_aqcge")
+size = Vector3(0.955, -0.01, 1.825)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e88ta"]
+
+[node name="MovableObject" type="StaticBody3D"]
+script = ExtResource("1_7fij8")
+_size = Vector3(4, 1.055, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gb2vs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_e88ta")
