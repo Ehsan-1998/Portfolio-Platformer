@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqeho7mnh638s"]
 
-[ext_resource type="Script" uid="uid://cm6x3463omuj5" path="res://Game1/Scripts/player.gd" id="1_kmob7"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1tqht"]
+[ext_resource type="Script" uid="uid://b0fr5eggs1y1d" path="res://Game1/Scenes/player.gd" id="1_1tqht"]
+[ext_resource type="PackedScene" uid="uid://cjy85c5sdhncs" path="res://Game1/Assets/character.glb" id="2_1tqht"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e6kex"]
+height = 3.8239746
 
-[node name="player" type="CharacterBody3D" groups=["player"]]
-script = ExtResource("1_kmob7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_1tqht")
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_1tqht")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8424072, 0)
 shape = SubResource("CapsuleShape3D_e6kex")
+
+[node name="character" parent="." instance=ExtResource("2_1tqht")]

@@ -10,6 +10,9 @@ var _already_triggered := false
 	$SpawnPoint3,
 	$SpawnPoint4,
 	$SpawnPoint5,
+	$SpawnPoint6,
+	$SpawnPoint7
+	,
 ]
 
 func _ready() -> void:
