@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwi1c6wc0day2"
+path="res://.godot/imported/Strange-Shop_Looping.mp3-6dae32c15cfdca5d8860cc7daa997e71.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/Strange-Shop_Looping.mp3"
+dest_files=["res://.godot/imported/Strange-Shop_Looping.mp3-6dae32c15cfdca5d8860cc7daa997e71.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

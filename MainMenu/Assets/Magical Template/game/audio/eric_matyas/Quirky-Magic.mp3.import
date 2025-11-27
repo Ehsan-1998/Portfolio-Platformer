@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b15s378wj4q6p"
+path="res://.godot/imported/Quirky-Magic.mp3-52699e70d45d27c44dfed6aae72a391b.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/Quirky-Magic.mp3"
+dest_files=["res://.godot/imported/Quirky-Magic.mp3-52699e70d45d27c44dfed6aae72a391b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

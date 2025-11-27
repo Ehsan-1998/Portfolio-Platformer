@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bw277t1bf71pp"
+path="res://.godot/imported/The-Village_Looping.mp3-2acabbb63aefbfdc78da5985efa81e72.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/The-Village_Looping.mp3"
+dest_files=["res://.godot/imported/The-Village_Looping.mp3-2acabbb63aefbfdc78da5985efa81e72.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

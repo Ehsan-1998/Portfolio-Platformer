@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cit5mr5r47is6"
+path="res://.godot/imported/RPG-Theme_Looping (1).mp3-ef2c4ebf403489c96dc0d71356f5abfa.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/RPG-Theme_Looping (1).mp3"
+dest_files=["res://.godot/imported/RPG-Theme_Looping (1).mp3-ef2c4ebf403489c96dc0d71356f5abfa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

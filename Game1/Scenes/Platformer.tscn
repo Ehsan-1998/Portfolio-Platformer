@@ -38,6 +38,7 @@ shadow_enabled = true
 [node name="Platforms" type="Node3D" parent="."]
 
 [node name="Floor" type="StaticBody3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9954057, 2.21802, -0.42554688)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Floor"]
 mesh = SubResource("BoxMesh_rxjjw")
@@ -69,41 +70,48 @@ shape = SubResource("BoxShape3D_fqowj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.54918, 1.6069691, -1.3724289)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Floor4"]
-transform = Transform3D(-0.007766689, 0, 1.9999397, 0, 1, 0, -0.99996984, 0, -0.015533378, 49.10643, 0.4370029, 0)
+transform = Transform3D(-0.0380181, 0, 11.61465, 0, -0.205, 0, -4.894852, 0, -0.09021046, 43.37342, 0.51926017, 0.59754896)
 mesh = SubResource("BoxMesh_rxjjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.10643, 0.4370029, 0)
 shape = SubResource("BoxShape3D_fqowj")
 
 [node name="MoveableObstacles" type="Node3D" parent="."]
 
 [node name="Obstacle" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 13.635092, 2.990147, -3.8665986)
-start = Vector3(13.635092, 2.990147, -3.8665986)
-stop = Vector3(13.635092, 2.990147, 1.0040793)
-duration = 1.5
-
-[node name="Obstacle2" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 20.5293, 2.990147, 1.3567586)
-start = Vector3(20.5293, 2.990147, -3.8665986)
-stop = Vector3(20.5293, 2.990147, 1.3567586)
-duration = 1.5
-
-[node name="Obstacle3" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 16.66511, 2.990147, 1.111177)
-start = Vector3(16.66511, 2.990147, -3.6886282)
-stop = Vector3(16.66511, 2.990147, 1.111177)
+transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 15.073086, 2.990147, -4.0713005)
+start = Vector3(15.073086, 2.990147, 1.2995076)
+stop = Vector3(15.073086, 2.990147, -4.0713005)
 duration = 1.5
 
 [node name="Obstacle4" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 6.269, 5.475453, -11.916104)
-start = Vector3(6.269, 5.475453, 9.773654)
-stop = Vector3(6.269, 5.475453, -11.916104)
+transform = Transform3D(-0.003557729, 0, -3.6299987, 0, 0.29, 0, 3.9199984, 0, -0.0032945296, 38.2547, 2.31326, -1.3622634)
+start = Vector3(38.2547, 2.31326, -1.3622634)
+stop = Vector3(53.7158, 2.31326, -1.3622634)
+duration = 2.5
+
+[node name="Obstacle2" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
+transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 34.755333, 2.990147, -4.191232)
+start = Vector3(34.755333, 2.990147, 1.3567586)
+stop = Vector3(34.755333, 2.990147, -4.191232)
 duration = 1.5
+
+[node name="Obstacle3" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
+transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 25.395372, 2.990147, 1.1502528)
+start = Vector3(25.395372, 2.990147, -4.1762967)
+stop = Vector3(25.395372, 2.990147, 1.1502528)
+duration = 1.5
+
+[node name="column" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
+transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 6.269, 4.956718, -14.6980295)
+start = Vector3(6.269, 4.956718, 8.935378)
+stop = Vector3(6.269, 4.956718, -14.6980295)
+duration = 2.0
 _size = Vector3(1, 5, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.1046326, 0, -0.99451095, 0, 1, 0, 0.99451095, 0, -0.1046326, 0, 4.888776, 0)
+transform = Transform3D(-0.014477561, 0.47460145, -0.88008183, 0.03363367, 0.8799071, 0.4739539, 0.99932945, -0.022738688, -0.028701497, -7.767713, 7.0738077, -1.65057)
 script = ExtResource("3_efi6s")
 
 [node name="UI" type="Node3D" parent="."]

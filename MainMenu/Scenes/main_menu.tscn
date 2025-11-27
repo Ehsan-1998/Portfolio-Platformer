@@ -1,0 +1,236 @@
+[gd_scene load_steps=12 format=3 uid="uid://gnbpus1dperv"]
+
+[ext_resource type="Script" uid="uid://di6st336ed5du" path="res://MainMenu/Scripts/main_menu.gd" id="1_v1kw2"]
+[ext_resource type="Texture2D" uid="uid://ctvwkqb4bopjl" path="res://MainMenu/Assets/Magical Template/game/gui/main_menu.png" id="2_f1erf"]
+[ext_resource type="Texture2D" uid="uid://e4kstlqp7j5l" path="res://MainMenu/Assets/Magical Template/game/gui/screens/save_load/frame.png" id="2_g4i2n"]
+[ext_resource type="Texture2D" uid="uid://g0j1tgjiyim6" path="res://MainMenu/Assets/Screenshot 2025-11-18 042951.png" id="2_y7nyg"]
+[ext_resource type="Texture2D" uid="uid://d3lm27hbyx2ia" path="res://MainMenu/Assets/Screenshot 2025-11-18 042717.png" id="3_8rkoi"]
+[ext_resource type="Texture2D" uid="uid://b5muyjuruehel" path="res://MainMenu/Assets/Screenshot 2025-11-18 050253.png" id="4_5p7cc"]
+[ext_resource type="FontFile" uid="uid://dl6x5hg6iuprb" path="res://MainMenu/Assets/Magical Template/game/fonts/Charmonman-Regular.ttf" id="4_bp723"]
+[ext_resource type="Texture2D" uid="uid://hl2gn0tjuir0" path="res://MainMenu/Assets/Screenshot 2025-11-18 051047.png" id="6_g4i2n"]
+
+[sub_resource type="Theme" id="Theme_bp723"]
+default_font = ExtResource("4_bp723")
+
+[sub_resource type="Theme" id="Theme_y3ldb"]
+default_font = ExtResource("4_bp723")
+
+[sub_resource type="Theme" id="Theme_jbjct"]
+default_font = ExtResource("4_bp723")
+default_font_size = 20
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchor_right = 1.1450001
+anchor_bottom = 1.2880001
+offset_right = -167.04016
+offset_bottom = -186.62408
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v1kw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1157, 499.99997)
+scale = Vector2(1.2145834, 0.93148136)
+texture = ExtResource("2_f1erf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.1470001
+anchor_bottom = 1.284
+offset_right = -160.34412
+offset_bottom = -174.03204
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g4i2n")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.87700003
+anchor_top = 0.031000001
+anchor_right = 0.919
+anchor_bottom = 0.093
+offset_left = -0.3040161
+offset_top = -0.08800125
+offset_right = -7.6879883
+offset_bottom = -9.264
+theme = SubResource("Theme_bp723")
+text = "EXIT"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.146
+anchor_bottom = 1.291
+offset_left = 350.5
+offset_right = -518.692
+offset_bottom = -753.568
+grow_horizontal = 2
+theme = SubResource("Theme_y3ldb")
+theme_override_font_sizes/font_size = 60
+text = "Ehsan PortFolio"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.00001
+offset_top = 170.0
+offset_right = -13.069702
+offset_bottom = -2.3781738
+scale = Vector2(1.005, 1.005)
+theme = SubResource("Theme_jbjct")
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 239
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture = ExtResource("2_y7nyg")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 34
+
+[node name="Label" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "This is a platformer 3d game ,
+It needs more work and that will
+be my focus to build it more."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play1Button" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "PLAY GAME
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 190
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+texture = ExtResource("4_5p7cc")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 34
+
+[node name="Label2" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "This game is for Creating 3D scene 
+simulating real world. The objective 
+was to practice importing meshes, textures 
+and HDRIs to create a realistic environment. "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 32
+
+[node name="Play2Button" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "PLAY GAME
+"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 220
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+texture = ExtResource("6_g4i2n")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 34
+
+[node name="Label3" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "The goal of this assignment was 
+to practice working in a team project
+in game development, follow best practices 
+and document the process thoroughly."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
+
+[node name="Play3Button" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "PLAY GAME
+"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 200
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_8rkoi")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 34
+alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = -2
+text = "This is a an open world 2d game ,
+ it was created by the collobration of
+four cst student this game showcases
+ the buildd of a high UI and combot skills."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play4Button" type="Button" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "PLAY GAME
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer/Play1Button" to="." method="_on_play_1_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer2/VBoxContainer/Play2Button" to="." method="_on_play_2_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer/Play3Button" to="." method="_on_play_3_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer4/VBoxContainer/Play4Button" to="." method="_on_play_4_button_pressed"]

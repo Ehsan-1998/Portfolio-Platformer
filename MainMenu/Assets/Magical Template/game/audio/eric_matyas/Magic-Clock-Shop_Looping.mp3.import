@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bevuqc1csutp5"
+path="res://.godot/imported/Magic-Clock-Shop_Looping.mp3-5236a1d3d07d17e07f0256be7b1361ee.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/Magic-Clock-Shop_Looping.mp3"
+dest_files=["res://.godot/imported/Magic-Clock-Shop_Looping.mp3-5236a1d3d07d17e07f0256be7b1361ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

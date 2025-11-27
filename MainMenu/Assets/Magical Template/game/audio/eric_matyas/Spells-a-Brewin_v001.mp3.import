@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnrh61nsu7r0b"
+path="res://.godot/imported/Spells-a-Brewin_v001.mp3-ee1d7f7451a9edc30bd7c7610addb502.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/Spells-a-Brewin_v001.mp3"
+dest_files=["res://.godot/imported/Spells-a-Brewin_v001.mp3-ee1d7f7451a9edc30bd7c7610addb502.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

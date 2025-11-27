@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://biqdk2n3nnu63"
+path="res://.godot/imported/RPG-Map-Music_Looping.mp3-f5b09732e19c2638b732bf2301c9c556.mp3str"
+
+[deps]
+
+source_file="res://MainMenu/Assets/Magical Template/game/audio/eric_matyas/RPG-Map-Music_Looping.mp3"
+dest_files=["res://.godot/imported/RPG-Map-Music_Looping.mp3-f5b09732e19c2638b732bf2301c9c556.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
