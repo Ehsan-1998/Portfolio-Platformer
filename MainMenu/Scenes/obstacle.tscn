@@ -18,3 +18,5 @@ mesh = SubResource("BoxMesh_gb2vs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_e88ta")
+
+[node name="Node3D" type="Node3D" parent="."]

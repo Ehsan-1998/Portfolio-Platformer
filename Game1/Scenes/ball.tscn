@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b03g0i24o41oe"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dhujj"]
+bounce = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_dhujj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3hoyi"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_dhujj")
+gravity_scale = 1.5
+angular_velocity = Vector3(0.02617994, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("SphereMesh_dhujj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_3hoyi")
