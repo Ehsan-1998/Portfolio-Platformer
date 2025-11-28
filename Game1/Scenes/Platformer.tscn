@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://spgbn3qm8t4w"]
+[gd_scene load_steps=24 format=3 uid="uid://spgbn3qm8t4w"]
 
 [ext_resource type="Texture2D" uid="uid://bbxrgsti4nrp0" path="res://Game1/Assets/syferfontein_1d_clear_puresky_4k.exr" id="1_0ma22"]
 [ext_resource type="Script" uid="uid://dquryn23dqt0y" path="res://Game1/Scripts/platformer.gd" id="1_clf80"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cbmn3j3kvn4od" path="res://Game1/Scenes/balls_bounce.gd" id="3_rxjjw"]
 [ext_resource type="Texture2D" uid="uid://dw4mjh4aq7g0r" path="res://Game1/Assets/textures/grids/Dark/texture_01.png" id="4_sj84c"]
 [ext_resource type="Texture2D" uid="uid://b43cmk8tambvq" path="res://Game1/Assets/textures/grids/Dark/texture_11.png" id="5_a7wpk"]
+[ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Scenes/player.tscn" id="7_fqowj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qkmxh"]
 panorama = ExtResource("1_0ma22")
@@ -26,7 +27,7 @@ material = SubResource("StandardMaterial3D_fitx8")
 size = Vector3(8.975, 0.185, 7.98)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sj84c"]
-size = Vector3(5.3465576, 1, 5.2865963)
+size = Vector3(8.478943, 1, 8.531977)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rxjjw"]
 material = SubResource("StandardMaterial3D_fitx8")
@@ -60,6 +61,7 @@ size = Vector3(0.001, 1, 45.24292)
 
 [node name="Platformer" type="Node3D"]
 script = ExtResource("1_clf80")
+player_scene = ExtResource("7_fqowj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_clf80")
@@ -78,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7147684, 0, 0)
 mesh = SubResource("BoxMesh_fqowj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003478527, 0, 0.0085327625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5696712, -0.44132757, -0.2279203)
 shape = SubResource("BoxShape3D_sj84c")
 
 [node name="Floor2" type="StaticBody3D" parent="Platforms"]
@@ -119,16 +121,19 @@ shape = SubResource("BoxShape3D_yvla7")
 [node name="CSGBox3D" type="CSGBox3D" parent="Platforms/CSGBOXES"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.12494, 4.6555443, 0.41378593)
 material_override = SubResource("StandardMaterial3D_m6qck")
+use_collision = true
 size = Vector3(100, 1, 100)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Platforms/CSGBOXES"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.6447, 6.115157, 1.933259)
 material_override = SubResource("StandardMaterial3D_emr7v")
+use_collision = true
 size = Vector3(1.694397, 1.7615967, 2.395996)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Platforms/CSGBOXES"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.37392, 6.7799826, 1.933259)
 material_override = SubResource("StandardMaterial3D_yvla7")
+use_collision = true
 size = Vector3(2.9648743, 3.0912476, 2.395996)
 
 [node name="MoveableObstacles" type="Node3D" parent="."]
@@ -140,7 +145,7 @@ stop = Vector3(15.073086, 2.990147, -4.0713005)
 duration = 1.5
 
 [node name="Obstacle4" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.003557729, 0, -3.6299987, 0, 0.29, 0, 3.9199984, 0, -0.0032945296, 38.2547, 2.31326, -1.3622634)
+transform = Transform3D(-0.005160522, 0, -5.2649975, 0, 0.421, 0, 5.6859975, 0, -0.0047784294, 38.2547, 2.31326, -1.3622634)
 start = Vector3(38.2547, 2.31326, -1.3622634)
 stop = Vector3(53.7158, 2.31326, -1.3622634)
 duration = 2.5
@@ -177,90 +182,97 @@ grow_vertical = 2
 [node name="EXIT" type="Button" parent="UI/Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.9760001
-offset_left = 980.0
-offset_top = 29.0
-offset_right = -92.0
-offset_bottom = -572.44806
+anchor_left = 0.851
+anchor_top = 0.045
+anchor_right = 0.92
+anchor_bottom = 0.093
+offset_left = -0.35198975
+offset_top = -0.16000175
+offset_right = 0.16003418
+offset_bottom = -0.26399994
 grow_horizontal = 0
 text = "EXIT
 "
 
-[node name="Balls" type="Node3D" parent="."]
+[node name="SpwanMarks" type="Node3D" parent="."]
 
-[node name="BallsBounce" type="Area3D" parent="Balls"]
+[node name="Balls" type="Node3D" parent="SpwanMarks"]
+
+[node name="BallsBounce" type="Area3D" parent="SpwanMarks/Balls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.44378, 1.4310789, -0.5028076)
 script = ExtResource("3_rxjjw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Balls/BallsBounce"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7390213, 1.4310789, -0.5028076)
 shape = SubResource("BoxShape3D_fqowj")
 debug_color = Color(0.9019608, 0.27450982, 0.16078432, 0.41960785)
 
-[node name="SpawnPoint1" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint1" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.486862, 16.718983, 2.6522655)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint2" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint2" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.61258, 16.650734, 9.178434)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint3" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint3" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.03572, 17.077595, 13.595491)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint4" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint4" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.690826, 16.773289, -9.731728)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint5" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint5" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.590363, 16.976715, -14.409202)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint6" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint6" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.19426, 16.658527, -6.4660687)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint7" type="Marker3D" parent="Balls/BallsBounce"]
+[node name="SpawnPoint7" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.19426, 16.582024, -2.5116816)
 gizmo_extents = 1.0
 
-[node name="BallsBounce2" type="Area3D" parent="Balls"]
+[node name="BallsBounce2" type="Area3D" parent="SpwanMarks/Balls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.36933, 1.4310789, -0.5028076)
 script = ExtResource("3_rxjjw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Balls/BallsBounce2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7390213, 1.4310789, -0.5028076)
 shape = SubResource("BoxShape3D_fqowj")
 debug_color = Color(0.9019608, 0.27450982, 0.16078432, 0.41960785)
 
-[node name="SpawnPoint1" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint1" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.34131, 17.079815, 6.1909122)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint2" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint2" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.569244, 16.653534, 8.093452)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint3" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint3" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0701, 16.900723, 10.253213)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint4" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint4" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.867233, 16.718006, 14.477482)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint5" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint5" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.743332, 17.214962, -16.310116)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint6" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint6" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.019485, 16.856731, 0.95788646)
 gizmo_extents = 1.0
 
-[node name="SpawnPoint7" type="Marker3D" parent="Balls/BallsBounce2"]
+[node name="SpawnPoint7" type="Marker3D" parent="SpwanMarks/Balls/BallsBounce2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.019485, 16.856731, -5.7114954)
 gizmo_extents = 1.0
+
+[node name="PlayerSpawn" type="Marker3D" parent="SpwanMarks"]
+transform = Transform3D(-0.8742133, 0, -0.48554212, 0, 1, 0, 0.48554212, 0, -0.8742133, -4.080175, 5.593486, 0)
 
 [connection signal="pressed" from="UI/Control/EXIT" to="." method="_on_exit_pressed"]
