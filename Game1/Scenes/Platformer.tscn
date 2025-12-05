@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cbmn3j3kvn4od" path="res://Game1/Scenes/balls_bounce.gd" id="3_rxjjw"]
 [ext_resource type="Texture2D" uid="uid://dw4mjh4aq7g0r" path="res://Game1/Assets/textures/grids/Dark/texture_01.png" id="4_sj84c"]
 [ext_resource type="Texture2D" uid="uid://b43cmk8tambvq" path="res://Game1/Assets/textures/grids/Dark/texture_11.png" id="5_a7wpk"]
-[ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Scenes/player.tscn" id="7_fqowj"]
+[ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Assets/player.tscn" id="7_fqowj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qkmxh"]
 panorama = ExtResource("1_0ma22")

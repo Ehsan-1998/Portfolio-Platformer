@@ -34,21 +34,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	animate()
+	
 
-func animate():
-	var moving = abs(velocity.x) + abs(velocity.z) > 0.1
-	$AnimationTree["parameters/conditions/isMoving"] = moving
-	$AnimationTree["parameters/conditions/isNotMoving"] = !moving
-	
-	
-	var running = Input.is_action_pressed("sprint")
-	$AnimationTree["parameters/conditions/isRunning"] = running
-	$AnimationTree["parameters/conditions/isNotRunning"] = !running
-	
-	
-	$AnimationTree["parameters/conditions/isJumpPressed"] = Input.is_action_just_pressed("jump")
-	$AnimationTree["parameters/conditions/isGrounded"] = is_on_floor()
+
 	
 
 
