@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://di6st336ed5du" path="res://MainMenu/Scripts/main_menu.gd" id="1_v1kw2"]
 [ext_resource type="Texture2D" uid="uid://ctvwkqb4bopjl" path="res://MainMenu/Assets/Magical Template/game/gui/main_menu.png" id="2_f1erf"]
 [ext_resource type="Texture2D" uid="uid://e4kstlqp7j5l" path="res://MainMenu/Assets/Magical Template/game/gui/screens/save_load/frame.png" id="2_g4i2n"]
-[ext_resource type="Texture2D" uid="uid://g0j1tgjiyim6" path="res://MainMenu/Assets/Screenshot 2025-11-18 042951.png" id="2_y7nyg"]
 [ext_resource type="Texture2D" uid="uid://d3lm27hbyx2ia" path="res://MainMenu/Assets/Screenshot 2025-11-18 042717.png" id="3_8rkoi"]
 [ext_resource type="Texture2D" uid="uid://b5muyjuruehel" path="res://MainMenu/Assets/Screenshot 2025-11-18 050253.png" id="4_5p7cc"]
 [ext_resource type="FontFile" uid="uid://dl6x5hg6iuprb" path="res://MainMenu/Assets/Magical Template/game/fonts/Charmonman-Regular.ttf" id="4_bp723"]
+[ext_resource type="Texture2D" uid="uid://dghl2kb1ufklr" path="res://MainMenu/Assets/Screenshot 2025-12-05 042502.png" id="5_bp723"]
 [ext_resource type="Texture2D" uid="uid://hl2gn0tjuir0" path="res://MainMenu/Assets/Screenshot 2025-11-18 051047.png" id="6_g4i2n"]
 
 [sub_resource type="Theme" id="Theme_bp723"]
@@ -72,7 +72,7 @@ theme_override_font_sizes/font_size = 60
 text = "Ehsan PortFolio"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 125.00001
@@ -94,7 +94,7 @@ theme_override_constants/separation = 239
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-texture = ExtResource("2_y7nyg")
+texture = ExtResource("5_bp723")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer"]

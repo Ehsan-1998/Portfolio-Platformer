@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://dquryn23dqt0y" path="res://Game1/Scripts/platformer.gd" id="1_clf80"]
 [ext_resource type="PackedScene" uid="uid://bs8306dmdimb6" path="res://MainMenu/Scenes/obstacle.tscn" id="2_qkmxh"]
 [ext_resource type="Texture2D" uid="uid://ftth27v6di5j" path="res://Game1/Assets/textures/grids/Dark/texture_04.png" id="3_fqowj"]
-[ext_resource type="Script" uid="uid://cbmn3j3kvn4od" path="res://Game1/Scenes/balls_bounce.gd" id="3_rxjjw"]
+[ext_resource type="Script" uid="uid://cbmn3j3kvn4od" path="res://Game1/Scripts/balls_bounce.gd" id="3_rxjjw"]
 [ext_resource type="Texture2D" uid="uid://dw4mjh4aq7g0r" path="res://Game1/Assets/textures/grids/Dark/texture_01.png" id="4_sj84c"]
 [ext_resource type="Texture2D" uid="uid://b43cmk8tambvq" path="res://Game1/Assets/textures/grids/Dark/texture_11.png" id="5_a7wpk"]
-[ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Assets/player.tscn" id="7_fqowj"]
+[ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Scenes/player.tscn" id="7_fqowj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qkmxh"]
 panorama = ExtResource("1_0ma22")
@@ -60,7 +60,7 @@ albedo_texture = ExtResource("5_a7wpk")
 size = Vector3(0.001, 1, 45.24292)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6qck"]
-size = Vector3(283.03757, 0.001, 157.61255)
+size = Vector3(283.03757, 0.001, 198.51917)
 
 [node name="Platformer" type="Node3D"]
 script = ExtResource("1_clf80")
@@ -80,7 +80,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9954057, 2.21802, -0.42554
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7147684, 0, 0)
-visible = false
 mesh = SubResource("BoxMesh_fqowj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor"]
@@ -110,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.681824, 0.39800978, -0.085
 shape = SubResource("BoxShape3D_emr7v")
 
 [node name="Floor4" type="StaticBody3D" parent="Platforms"]
-transform = Transform3D(1.045, 0, 0, 0, 1.045, 0, 0, 0, 1.045, 46.349, 1.607, -1.372)
+transform = Transform3D(1.0448412, -0.018219529, 0, 0.018219529, 1.0448412, 0, 0, 0, 1.045, 46.349, 1.607, -1.372)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Floor4"]
 transform = Transform3D(-0.06996845, -0.0062911944, 12.342413, -0.004199802, 0.104811355, 0.7408407, -9.024728, -2.0474544e-10, -0.09603513, 42.09919, 0.371845, 0.54516554)
@@ -123,22 +122,52 @@ shape = SubResource("BoxShape3D_yvla7")
 [node name="CSGBOXES" type="Node3D" parent="Platforms"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Platforms/CSGBOXES"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.12494, 4.6555443, 0.41378593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.58078, 4.5819244, 4.7399874)
 material_override = SubResource("StandardMaterial3D_m6qck")
 use_collision = true
-size = Vector3(100, 1, 100)
+size = Vector3(124.6806, 1, 152.7442)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Platforms/CSGBOXES"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.6447, 6.115157, 1.933259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.6005, 9.921844, -18.965698)
 material_override = SubResource("StandardMaterial3D_emr7v")
 use_collision = true
-size = Vector3(1.694397, 1.7615967, 2.395996)
+size = Vector3(3.6059875, 9.3749695, 55.86609)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Platforms/CSGBOXES"]
+transform = Transform3D(0.24275161, 0, -0.9700885, 0, 1, 0, 0.9700885, 0, 0.24275161, 168.8278, 9.921844, 69.485214)
+material_override = SubResource("StandardMaterial3D_emr7v")
+use_collision = true
+size = Vector3(3.6059875, 9.3749695, 66.91647)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Platforms/CSGBOXES"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.43468, 9.36745, -29.182098)
+material_override = SubResource("StandardMaterial3D_emr7v")
+use_collision = true
+size = Vector3(2.7671015, 8.453484, 74.597595)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Platforms/CSGBOXES"]
+transform = Transform3D(0.7249297, 0, -0.68882287, 0, 1, 0, 0.68882287, 0, 0.7249297, 213.13777, 9.994712, -38.634773)
+material_override = SubResource("StandardMaterial3D_emr7v")
+use_collision = true
+size = Vector3(3.6059875, 7.1989594, 48.132263)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Platforms/CSGBOXES"]
+transform = Transform3D(0.9007058, 0, 0.43442956, 0, 1, 0, -0.43442956, 0, 0.9007058, 204.96819, 9.414275, 21.112965)
+material_override = SubResource("StandardMaterial3D_emr7v")
+use_collision = true
+size = Vector3(3.6059875, 8.359833, 59.278244)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Platforms/CSGBOXES"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.68796, 9.414275, 21.702457)
+material_override = SubResource("StandardMaterial3D_emr7v")
+use_collision = true
+size = Vector3(3.6059875, 8.359833, 88.746765)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Platforms/CSGBOXES"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.37392, 6.7799826, 1.933259)
+transform = Transform3D(0.7735527, 0, -0.633732, 0, 1, 0, 0.633732, 0, 0.7735527, 155.39287, 11.377906, 39.303623)
 material_override = SubResource("StandardMaterial3D_yvla7")
 use_collision = true
-size = Vector3(2.9648743, 3.0912476, 2.395996)
+size = Vector3(5.110111, 12.287094, 54.684387)
 
 [node name="MoveableObstacles" type="Node3D" parent="."]
 
@@ -280,9 +309,11 @@ gizmo_extents = 1.0
 transform = Transform3D(-0.8742133, 0, -0.48554212, 0, 1, 0, 0.48554212, 0, -0.8742133, -4.080175, 5.593486, 0)
 
 [node name="Fallzone" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fallzone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.77269, -10.713175, -3.9813538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.77269, -21.496851, 3.163971)
 shape = SubResource("BoxShape3D_m6qck")
 debug_color = Color(0.825515, 0.35959664, 0.4575107, 0.41960785)
 
