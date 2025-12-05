@@ -13,6 +13,7 @@ var mouse_sensitivity = 0.005
 var camera_rotation_y = 0.0
 
 func _ready():
+	add_to_group("player")
 	animation_tree.active = true
 	state_machine.travel("Idle")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

@@ -1,20 +1,25 @@
 extends Node3D
 
 @export var player_scene: PackedScene
-# Called when the node enters the scene tree for the first time.
 @onready var spawn_marker: Marker3D = $SpwanMarks/PlayerSpawn
+
+var player: CharacterBody3D = null   # Start as null
+
 func _ready():
 	if player_scene and spawn_marker:
-		var player_instance = player_scene.instantiate()
-		add_child(player_instance)
-		player_instance.global_position = spawn_marker.global_position
-		player_instance.velocity = Vector3.ZERO  
+		player = player_scene.instantiate()
+		add_child(player)
+		player.global_position = spawn_marker.global_position
 	else:
 		print("ERROR: Player Scene or Spawn Marker missing!")
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	if player == null:
+		return  # Do NOT call enemy AI yet
+
+	get_tree().call_group("enemies", "update_target_location", player.global_transform.origin)
 
 
 func _on_exit_pressed() -> void:
