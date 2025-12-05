@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://spgbn3qm8t4w"]
+[gd_scene load_steps=25 format=3 uid="uid://spgbn3qm8t4w"]
 
 [ext_resource type="Texture2D" uid="uid://bbxrgsti4nrp0" path="res://Game1/Assets/syferfontein_1d_clear_puresky_4k.exr" id="1_0ma22"]
 [ext_resource type="Script" uid="uid://dquryn23dqt0y" path="res://Game1/Scripts/platformer.gd" id="1_clf80"]
@@ -41,10 +41,10 @@ material = SubResource("StandardMaterial3D_fitx8")
 size = Vector3(5, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_emr7v"]
-size = Vector3(26.210327, 1, 5.2457027)
+size = Vector3(26.210327, 1, 5.085962)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yvla7"]
-size = Vector3(37.948624, 0.001, 62.404476)
+size = Vector3(44.691597, 0.001, 62.404476)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6qck"]
 albedo_texture = ExtResource("3_fqowj")
@@ -58,6 +58,9 @@ albedo_texture = ExtResource("5_a7wpk")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqowj"]
 size = Vector3(0.001, 1, 45.24292)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6qck"]
+size = Vector3(283.03757, 0.001, 157.61255)
 
 [node name="Platformer" type="Node3D"]
 script = ExtResource("1_clf80")
@@ -77,6 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9954057, 2.21802, -0.42554
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platforms/Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7147684, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_fqowj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor"]
@@ -91,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5, -2.1446457, 0.4372821, 0)
 mesh = SubResource("BoxMesh_rxjjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4048157, 0, 0.19987202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4048157, 0.43813372, 0.19987202)
 shape = SubResource("BoxShape3D_a7wpk")
 
 [node name="Floor3" type="StaticBody3D" parent="Platforms"]
@@ -102,7 +106,7 @@ transform = Transform3D(-0.007766689, 0, 4.9998493, 0, 1, 0, -0.99996984, 0, -0.
 mesh = SubResource("BoxMesh_m6qck")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.681824, 0, 0.29749775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.681824, 0.39800978, -0.08530259)
 shape = SubResource("BoxShape3D_emr7v")
 
 [node name="Floor4" type="StaticBody3D" parent="Platforms"]
@@ -113,7 +117,7 @@ transform = Transform3D(-0.06996845, -0.0062911944, 12.342413, -0.004199802, 0.1
 mesh = SubResource("BoxMesh_rxjjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Floor4"]
-transform = Transform3D(-0.007752705, -0.059916135, 0.9981733, -0.00046535203, 0.9982034, 0.05991433, -0.99996984, -3.8708095e-09, -0.0077666584, 42.33879, 0.46993113, -2.9502444)
+transform = Transform3D(-0.007752705, -0.05991613, 0.9981733, -0.00046535203, 0.99820346, 0.05991433, -0.9999699, -3.8708095e-09, -0.0077666584, 42.36493, 0.47150016, 0.42114073)
 shape = SubResource("BoxShape3D_yvla7")
 
 [node name="CSGBOXES" type="Node3D" parent="Platforms"]
@@ -275,4 +279,12 @@ gizmo_extents = 1.0
 [node name="PlayerSpawn" type="Marker3D" parent="SpwanMarks"]
 transform = Transform3D(-0.8742133, 0, -0.48554212, 0, 1, 0, 0.48554212, 0, -0.8742133, -4.080175, 5.593486, 0)
 
+[node name="Fallzone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fallzone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.77269, -10.713175, -3.9813538)
+shape = SubResource("BoxShape3D_m6qck")
+debug_color = Color(0.825515, 0.35959664, 0.4575107, 0.41960785)
+
 [connection signal="pressed" from="UI/Control/EXIT" to="." method="_on_exit_pressed"]
+[connection signal="body_entered" from="Fallzone" to="." method="_on_fallzone_body_entered"]

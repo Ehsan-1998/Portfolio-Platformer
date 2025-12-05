@@ -20,3 +20,7 @@ func _process(delta: float) -> void:
 func _on_exit_pressed() -> void:
 	SceneManager.change_scene("res://MainMenu/Scenes/main_menu.tscn", {
 	})
+
+
+func _on_fallzone_body_entered(body: Node3D) -> void:
+	get_tree().change_scene_to_file("res://Game1/Scenes/Platformer.tscn")
