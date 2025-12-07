@@ -31,12 +31,7 @@ Portfolio/
 │
 ├── MainMenu/          # Main menu scenes & UI
 ├── Game1/             # Internal Godot game 1 (source code)
-├── Game2/             # Internal Godot game 2 (source code)
-│
-├── Executables/       # External .exe games (run with OS.create_process after export)
-│      ├── Game3.exe
-│      └── Game4.exe
-```
+
 
 - **Internal games** (Godot scenes) are loaded using  
   `SceneManager.change_scene("res://Game1/Main.tscn")`
@@ -47,12 +42,12 @@ Portfolio/
 
 #Games Included in This Portfolio
 
-### **Game 1 – (Name Here)**
+### **Game 1 – (Platformer)**
 - Built fully in Godot  
 - Main scene: `res://Game1/Main.tscn`  
 - Features: (add short description)
 
-### **Game 2 – (Name Here)**
+### **Game 2 – (not yet)**
 - Built fully in Godot  
 - Main scene: `res://Game2/Main.tscn`  
 - Features: (add short description)

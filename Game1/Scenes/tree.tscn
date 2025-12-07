@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bdmjrd628bvpi" path="res://Game1/Assets/tree_sakura/textures/DL2X2_1_metallicRoughness.png" id="2_wanmc"]
 [ext_resource type="Texture2D" uid="uid://dat1gd43iwyk1" path="res://Game1/Assets/tree_sakura/textures/Trank_bark_baseColor.jpeg" id="3_dunpt"]
 [ext_resource type="Texture2D" uid="uid://oesb5qsy8qu2" path="res://Game1/Assets/tree_sakura/textures/Trank_bark_metallicRoughness.png" id="4_o1nvq"]
-[ext_resource type="Script" uid="uid://2ud4eillfq36" path="res://Game1/Scenes/win_zone.gd" id="5_dunpt"]
+[ext_resource type="Script" uid="uid://2ud4eillfq36" path="res://Game1/Scripts/win_zone.gd" id="5_dunpt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ds1be"]
 resource_name = "DL2X2_1"
