@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://spgbn3qm8t4w"]
+[gd_scene load_steps=31 format=3 uid="uid://spgbn3qm8t4w"]
 
 [ext_resource type="Texture2D" uid="uid://bbxrgsti4nrp0" path="res://Game1/Assets/syferfontein_1d_clear_puresky_4k.exr" id="1_0ma22"]
 [ext_resource type="Script" uid="uid://dquryn23dqt0y" path="res://Game1/Scripts/platformer.gd" id="1_clf80"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bmhl5qo23isjk" path="res://Game1/Scenes/enemy.tscn" id="7_a7wpk"]
 [ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Scenes/player.tscn" id="7_fqowj"]
 [ext_resource type="PackedScene" uid="uid://cx5u0inqc6c4j" path="res://Game1/Scenes/tree.tscn" id="9_a7wpk"]
+[ext_resource type="FontFile" uid="uid://dl6x5hg6iuprb" path="res://MainMenu/Assets/Magical Template/game/fonts/Charmonman-Regular.ttf" id="9_m6qck"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qkmxh"]
 panorama = ExtResource("1_0ma22")
@@ -74,6 +75,10 @@ size = Vector3(0.001, 1, 45.24292)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m6qck"]
 size = Vector3(466.50464, 0.001, 202.67609)
+
+[sub_resource type="Theme" id="Theme_a7wpk"]
+default_font = ExtResource("9_m6qck")
+default_font_size = 50
 
 [node name="Platformer" type="Node3D"]
 script = ExtResource("1_clf80")
@@ -360,6 +365,19 @@ transform = Transform3D(1.2335162, 0, 2.0529156, 0, 2.395, 0, -2.0529156, 0, 1.2
 
 [node name="Tree" parent="." instance=ExtResource("9_a7wpk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 273.76505, 0, 2.6216831)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="YouWonLabel" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 476.0
+offset_top = 135.0
+offset_right = 568.0
+offset_bottom = 184.0
+theme = SubResource("Theme_a7wpk")
+theme_override_colors/font_color = Color(1, 0.5647059, 0.16470589, 1)
+text = "You Won !
+Look at Sky"
 
 [connection signal="pressed" from="UI/Control/EXIT" to="." method="_on_exit_pressed"]
 [connection signal="body_entered" from="Fallzone" to="." method="_on_fallzone_body_entered"]

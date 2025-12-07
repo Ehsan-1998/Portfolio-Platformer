@@ -7,7 +7,7 @@
 [ext_resource type="Animation" uid="uid://b8csaxdkf74u" path="res://Game1/Assets/Animations/Walk.res" id="6_x8nfa"]
 [ext_resource type="Animation" uid="uid://cgbg4vwcgudwl" path="res://Game1/Assets/Animations/Jumping.res" id="7_l5dps"]
 [ext_resource type="Animation" uid="uid://d2quyb6gdwxk" path="res://Game1/Assets/Animations/Kick.res" id="8_rj7bm"]
-[ext_resource type="Script" uid="uid://ctvsnmsdfbxx4" path="res://Game1/Scenes/camera_pivot.gd" id="9_5fvtg"]
+[ext_resource type="Script" uid="uid://ctvsnmsdfbxx4" path="res://Game1/Scripts/camera_pivot.gd" id="9_5fvtg"]
 [ext_resource type="Animation" uid="uid://1ttpoxm5qai8" path="res://Game1/Assets/Animations/MagicAttack.res" id="9_ejfl8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e6kex"]

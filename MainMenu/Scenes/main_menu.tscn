@@ -106,9 +106,9 @@ theme_override_constants/separation = 34
 [node name="Label" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "This is a platformer 3d game ,
-It needs more work and that will
-be my focus to build it more."
+text = "This is a platformer 3d game ,uses 
+state machine, path finding,movments,
+spwaning of objects, shader and gpu particule."
 horizontal_alignment = 1
 vertical_alignment = 1
 
