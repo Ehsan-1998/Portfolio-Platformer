@@ -9,8 +9,6 @@ const GRAVITY = 9.8
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 var is_jumping = false
-var mouse_sensitivity = 0.005
-var camera_rotation_y = 0.0
 
 func _ready():
 	add_to_group("player")
@@ -19,7 +17,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= GRAVITY * delta
@@ -32,16 +29,27 @@ func _physics_process(delta):
 		is_jumping = true
 		state_machine.travel("Jumping")
 
-	# Movement input
-	var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	direction = direction.rotated(Vector3.UP, get_tree().get_nodes_in_group("camera_pivot")[0].rotation.y)
+	# --- CAMERA RELATIVE MOVEMENT ---
+	var input_dir = Input.get_vector("left", "right", "backward", "forward")
+	var pivot = get_tree().get_first_node_in_group("camera_pivot")
 
-	# --- MOVEMENT SPEED (Walk / Run) ---
+	var forward = -pivot.transform.basis.z
+	var right = pivot.transform.basis.x
+
+	# ---- FIX: Remove vertical tilt influence ----
+	forward.y = 0
+	right.y = 0
+	forward = forward.normalized()
+	right = right.normalized()
+
+	var direction = (right * input_dir.x + forward * input_dir.y).normalized()
+
+	# Speed
 	var current_speed = WALK_SPEED
 	if Input.is_action_pressed("sprint"):
 		current_speed = RUN_SPEED
 
+	# Movement without rotation
 	if direction.length() > 0.01:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
@@ -50,19 +58,15 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, WALK_SPEED)
 
 	move_and_slide()
-	
-	
 
-	# --- Jump animation protection ---
+	# Jump animation control
 	if is_jumping:
 		state_machine.travel("Jumping")
-
 		if not is_on_floor():
 			return
-		
 		is_jumping = false
 
-	# --- Normal locomotion animations ---
+	# Locomotion animation
 	if direction.length() > 0.1:
 		if Input.is_action_pressed("sprint"):
 			state_machine.travel("Running")
