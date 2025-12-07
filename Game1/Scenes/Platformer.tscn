@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://spgbn3qm8t4w"]
+[gd_scene load_steps=29 format=3 uid="uid://spgbn3qm8t4w"]
 
 [ext_resource type="Texture2D" uid="uid://bbxrgsti4nrp0" path="res://Game1/Assets/syferfontein_1d_clear_puresky_4k.exr" id="1_0ma22"]
 [ext_resource type="Script" uid="uid://dquryn23dqt0y" path="res://Game1/Scripts/platformer.gd" id="1_clf80"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bmhl5qo23isjk" path="res://Game1/Scenes/enemy.tscn" id="7_a7wpk"]
 [ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Scenes/player.tscn" id="7_fqowj"]
 [ext_resource type="PackedScene" uid="uid://cx5u0inqc6c4j" path="res://Game1/Scenes/tree.tscn" id="9_a7wpk"]
-[ext_resource type="AudioStream" uid="uid://cg4tvcbfgrbqw" path="res://Game1/Assets/music/Badly-chosic.com_.mp3" id="10_m6qck"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qkmxh"]
 panorama = ExtResource("1_0ma22")
@@ -177,7 +176,7 @@ use_collision = true
 size = Vector3(2.7671015, 8.453484, 74.597595)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Platforms/CSGBOXES/NavigationRegion3D"]
-transform = Transform3D(0.7249297, 0, -0.68882287, 0, 1, 0, 0.68882287, 0, 0.7249297, 213.13777, 9.994712, -38.634773)
+transform = Transform3D(0.7249297, 0, -0.68882287, 0, 1, 0, 0.68882287, 0, 0.7249297, 213.13777, 8.97199, -38.634773)
 material_override = SubResource("StandardMaterial3D_emr7v")
 use_collision = true
 size = Vector3(3.6059875, 7.1989594, 48.132263)
@@ -221,19 +220,19 @@ stop = Vector3(25.395372, 2.990147, 1.1502528)
 duration = 1.5
 
 [node name="column" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 6.269, 4.956718, -14.6980295)
-start = Vector3(6.269, 4.956718, 8.935378)
-stop = Vector3(6.269, 4.956718, -14.6980295)
+transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 6.269, 4.956718, 5.866165)
+start = Vector3(6.269, 4.956718, -8.492977)
+stop = Vector3(6.269, 4.956718, 5.866165)
 duration = 2.0
-_size = Vector3(9, 5, 0)
+_size = Vector3(10, 5, 0)
 
 [node name="Label3D" type="Label3D" parent="MoveableObstacles/column"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004892349, 0, 0.5387645)
 modulate = Color(1, 1, 0.33333334, 1)
-text = "AWSD to Move, Shift to run
-      Reach Tree of
-            life"
-font_size = 140
+text = "AWSD Keys to move, Shift to run
+             Reach Tree of life 
+             Take a look at sky!"
+font_size = 130
 
 [node name="UI" type="Node3D" parent="."]
 
@@ -358,13 +357,6 @@ debug_color = Color(0.825515, 0.35959664, 0.4575107, 0.41960785)
 
 [node name="Enemy" parent="Enemies" instance=ExtResource("7_a7wpk")]
 transform = Transform3D(1.2335162, 0, 2.0529156, 0, 2.395, 0, -2.0529156, 0, 1.2335162, 208.111, 5.131, -15.384575)
-
-[node name="Enemy5" parent="Enemies" instance=ExtResource("7_a7wpk")]
-transform = Transform3D(1.2335162, 0, 2.0529156, 0, 2.395, 0, -2.0529156, 0, 1.2335162, 216.6789, 5.131, 21.828243)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_m6qck")
-autoplay = true
 
 [node name="Tree" parent="." instance=ExtResource("9_a7wpk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 273.76505, 0, 2.6216831)

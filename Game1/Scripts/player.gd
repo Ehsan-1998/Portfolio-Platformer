@@ -14,7 +14,7 @@ func _ready():
 	add_to_group("player")
 	animation_tree.active = true
 	state_machine.travel("Idle")
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func _physics_process(delta):
 	# Gravity
@@ -29,27 +29,22 @@ func _physics_process(delta):
 		is_jumping = true
 		state_machine.travel("Jumping")
 
-	# --- CAMERA RELATIVE MOVEMENT ---
+	# --- BASIC MOVEMENT (NO CAMERA) ---
 	var input_dir = Input.get_vector("left", "right", "backward", "forward")
-	var pivot = get_tree().get_first_node_in_group("camera_pivot")
 
-	var forward = -pivot.transform.basis.z
-	var right = pivot.transform.basis.x
-
-	# ---- FIX: Remove vertical tilt influence ----
-	forward.y = 0
-	right.y = 0
-	forward = forward.normalized()
-	right = right.normalized()
+	# Convert to world space direction based on player's orientation
+	var forward = -transform.basis.z
+	var right   =  transform.basis.x
 
 	var direction = (right * input_dir.x + forward * input_dir.y).normalized()
+	direction = direction.rotated(Vector3.UP, get_tree().get_nodes_in_group("Camera_Pivot")[0].rotation.y)
 
 	# Speed
 	var current_speed = WALK_SPEED
 	if Input.is_action_pressed("sprint"):
 		current_speed = RUN_SPEED
 
-	# Movement without rotation
+	# Apply movement
 	if direction.length() > 0.01:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
