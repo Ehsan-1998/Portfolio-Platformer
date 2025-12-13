@@ -8,13 +8,8 @@ func _ready() -> void:
 
 
 func _input(event):
-	# Release mouse when pressing ESC
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-	# Recapture mouse when clicking anywhere
-	if event is InputEventMouseButton and event.pressed:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _on_play_1_button_pressed() -> void:

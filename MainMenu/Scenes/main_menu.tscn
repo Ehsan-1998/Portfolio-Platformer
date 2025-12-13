@@ -72,6 +72,7 @@ theme_override_font_sizes/font_size = 60
 text = "Ehsan PortFolio"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+clip_contents = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,7 +90,7 @@ theme_override_constants/separation = 36
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 239
+theme_override_constants/separation = 169
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
@@ -194,7 +195,7 @@ text = "PLAY GAME
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 200
+theme_override_constants/separation = 210
 
 [node name="TextureRect4" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(300, 200)
