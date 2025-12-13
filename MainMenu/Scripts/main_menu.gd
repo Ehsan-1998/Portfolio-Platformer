@@ -34,7 +34,7 @@ func _on_play_4_button_pressed() -> void:
 
 
 func _on_play_3_button_pressed() -> void:
-	var path_to_exe= ProjectSettings.globalize_path("res://Games/Ghost/Ghost.exe")
+	var path_to_exe= ProjectSettings.globalize_path("res://Games/MuscleCar/Muscle.exe")
 	var arguments = []
 	var result = OS.create_process(path_to_exe, arguments)
 	if result != -1:

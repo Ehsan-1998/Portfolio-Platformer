@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b5muyjuruehel" path="res://MainMenu/Assets/Screenshot 2025-11-18 050253.png" id="4_5p7cc"]
 [ext_resource type="FontFile" uid="uid://dl6x5hg6iuprb" path="res://MainMenu/Assets/Magical Template/game/fonts/Charmonman-Regular.ttf" id="4_bp723"]
 [ext_resource type="Texture2D" uid="uid://dghl2kb1ufklr" path="res://MainMenu/Assets/Screenshot 2025-12-05 042502.png" id="5_bp723"]
-[ext_resource type="Texture2D" uid="uid://hl2gn0tjuir0" path="res://MainMenu/Assets/Screenshot 2025-11-18 051047.png" id="6_g4i2n"]
+[ext_resource type="Texture2D" uid="uid://b47ywk7reuli6" path="res://MainMenu/Assets/Screenshot 2025-12-12 084425.png" id="7_bp723"]
 
 [sub_resource type="Theme" id="Theme_bp723"]
 default_font = ExtResource("4_bp723")
@@ -164,7 +164,7 @@ theme_override_constants/separation = 220
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
-texture = ExtResource("6_g4i2n")
+texture = ExtResource("7_bp723")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3"]
@@ -175,10 +175,9 @@ theme_override_constants/separation = 34
 
 [node name="Label3" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
-text = "The goal of this assignment was 
-to practice working in a team project
-in game development, follow best practices 
-and document the process thoroughly."
+text = "The goal of this project is
+to practice driving a car
+and enjoy the game , this needs improvemnt."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_trim_flags = 0
