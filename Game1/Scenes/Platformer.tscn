@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://spgbn3qm8t4w"]
+[gd_scene load_steps=32 format=3 uid="uid://spgbn3qm8t4w"]
 
 [ext_resource type="Texture2D" uid="uid://bbxrgsti4nrp0" path="res://Game1/Assets/syferfontein_1d_clear_puresky_4k.exr" id="1_0ma22"]
 [ext_resource type="Script" uid="uid://dquryn23dqt0y" path="res://Game1/Scripts/platformer.gd" id="1_clf80"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dqeho7mnh638s" path="res://Game1/Scenes/player.tscn" id="7_fqowj"]
 [ext_resource type="PackedScene" uid="uid://cx5u0inqc6c4j" path="res://Game1/Scenes/tree.tscn" id="9_a7wpk"]
 [ext_resource type="FontFile" uid="uid://dl6x5hg6iuprb" path="res://MainMenu/Assets/Magical Template/game/fonts/Charmonman-Regular.ttf" id="9_m6qck"]
+[ext_resource type="PackedScene" uid="uid://hwkvsrcl8mb2" path="res://Game1/Scenes/Animatablebody.tscn" id="10_m6qck"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qkmxh"]
 panorama = ExtResource("1_0ma22")
@@ -206,12 +207,6 @@ start = Vector3(15.073086, 2.990147, 1.2995076)
 stop = Vector3(15.073086, 2.990147, -4.0713005)
 duration = 1.5
 
-[node name="Obstacle4" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
-transform = Transform3D(-0.005160522, 0, -5.2649975, 0, 0.421, 0, 5.6859975, 0, -0.0047784294, 38.2547, 2.31326, -1.3622634)
-start = Vector3(38.2547, 2.31326, -1.3622634)
-stop = Vector3(53.7158, 2.31326, -1.3622634)
-duration = 2.5
-
 [node name="Obstacle2" parent="MoveableObstacles" instance=ExtResource("2_qkmxh")]
 transform = Transform3D(-0.0009075627, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, -0.0009075627, 34.755333, 5.435765, -4.191232)
 start = Vector3(34.755333, 2.990147, 1.3567586)
@@ -378,6 +373,11 @@ theme = SubResource("Theme_a7wpk")
 theme_override_colors/font_color = Color(1, 0.5647059, 0.16470589, 1)
 text = "You Won !
 Look at Sky"
+
+[node name="Platforme" parent="." instance=ExtResource("10_m6qck")]
+transform = Transform3D(1.745, 0, 0, 0, 1.745, 0, 0, 0, 1.745, 55.854614, 2.6469755, -1.4555452)
+start = Vector3(38.194378, 2.6469755, -1.4555452)
+stop = Vector3(55.854614, 2.6469755, -1.4555452)
 
 [connection signal="pressed" from="UI/Control/EXIT" to="." method="_on_exit_pressed"]
 [connection signal="body_entered" from="Fallzone" to="." method="_on_fallzone_body_entered"]
